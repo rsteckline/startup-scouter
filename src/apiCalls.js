@@ -1,4 +1,4 @@
-export const getJobIds = async () => {
+export const getJobStoryIds = async () => {
   try {
     const response = await fetch(
       "https://hacker-news.firebaseio.com/v0/jobstories.json"
@@ -15,7 +15,7 @@ export const getJobIds = async () => {
   }
 };
 
-export const getJobDetails = async (id) => {
+export const getJobStoryDetails = async (id) => {
   try {
     const response = await fetch(
       `https://hacker-news.firebaseio.com/v0/item/${id}.json`
