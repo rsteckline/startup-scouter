@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import MainPage from "./components/MainPage/MainPage";
+import Header from "./components/Header/Header"
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState('');
+
   return (
     <div className="App">
-      <header className="App-Header">
-        <h1>Startup Scouter</h1>
-      </header>
+      <Header onSearchChange={setSearchQuery} />
       <main>
-        <MainPage />
+        <MainPage searchQuery={searchQuery} /> 
       </main>
     </div>
   );

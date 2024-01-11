@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { getJobStoryIds, getJobStoryDetails } from "../../apiCalls";
 import JobPosting from "../JobPosting/JobPosting";
+import "./MainPage.css"
 
-const MainPage = () => {
+const MainPage = ({ searchQuery }) => {
   const [jobStories, setJobStories] = useState([]);
 
   useEffect(() => {
@@ -12,10 +13,18 @@ const MainPage = () => {
       .catch((error) => console.error("Error fetching jobs:", error));
   }, []);
 
+const filteredStories = jobStories.filter(job => {
+    const query = searchQuery.toLowerCase()
+    const titleMatches = job.title ? job.title.toLowerCase().includes(query) : false;
+    const textMatches = job.text ? job.text.toLowerCase().includes(query) : false;
+
+    return titleMatches || textMatches;
+  });
+
   return (
-    <div>
+    <div className="main-page">
       <h1>Job Listings</h1>
-      {jobStories.map((job) => job && <JobPosting key={job.id} job={job} />)}
+      {filteredStories.map((job) => job && <JobPosting key={job.id} job={job} />)}
     </div>
   );
 };
