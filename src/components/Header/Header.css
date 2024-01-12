@@ -1,30 +1,65 @@
 .app-header {
-    background-color: #457B9D;
-    color: white;
-    padding: 25px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #457B9D;
+  color: white;
+  padding: 25px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .app-header h1 {
-    margin: 20;
-    font-size: 1.5em;
-    font-size: 48px;
-  }
+  margin: 20;
+  font-size: 1.5em;
+  font-size: 48px;
+}
   
-  .app-header input {
-    padding: 5px;
-    font-size: 1em;
-  }
+.app-header input {
+  padding: 5px;
+  font-size: 1em;
+}
 
-  .back-button {
-    display: inline-block;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    margin-right: 20px;
-    background-color: #d38847;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
+.back-button {
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-right: 20px;
+  background-color: #d38847;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-container .fa-search {
+  color: white;
+  margin-right: 10px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+  transition: box-shadow 0.1s;
+
+  &:focus-within {
+    box-shadow: 0 0 20px #d38847;
+  }
+}
+
+.search-icon {
+  color: #d38847;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  font-size: 1em;
 }

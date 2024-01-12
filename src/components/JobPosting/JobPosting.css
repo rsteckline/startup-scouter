@@ -1,9 +1,5 @@
-.job-link-icon {
-    margin-left: 10px;
-    color: #457B9D;
+.job-posting-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-  
-.job-link-icon i {
-    font-size: 1em;
-}
-  

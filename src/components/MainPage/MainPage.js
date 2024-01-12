@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getJobStoryIds, getJobStoryDetails } from "../../apiCalls";
 import JobPosting from "../JobPosting/JobPosting";
-import "./MainPage.css"
+import "./MainPage.css";
 
 const MainPage = ({ searchQuery }) => {
   const [jobStories, setJobStories] = useState([]);
@@ -13,8 +13,8 @@ const MainPage = ({ searchQuery }) => {
       .catch((error) => console.error("Error fetching jobs:", error));
   }, []);
 
-const filteredStories = jobStories.filter(job => {
-    const query = searchQuery.toLowerCase()
+  const filteredStories = jobStories.filter((job) => {
+    const query = searchQuery.toLowerCase();
     const titleMatches = job.title ? job.title.toLowerCase().includes(query) : false;
     const textMatches = job.text ? job.text.toLowerCase().includes(query) : false;
 
@@ -24,11 +24,14 @@ const filteredStories = jobStories.filter(job => {
   return (
     <div className="main-page">
       <h1 className="title">Job Listings</h1>
-      {filteredStories.map((job) => job && (
-        <div className="job-posting" key={job.id}>
-          <JobPosting job={job} />
-        </div>
-      ))}
+      {filteredStories.map(
+        (job) =>
+          job && (
+            <div className="job-posting" key={job.id}>
+              <JobPosting job={job} />
+            </div>
+          )
+      )}
     </div>
   );
 };

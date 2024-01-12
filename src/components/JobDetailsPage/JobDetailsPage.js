@@ -9,16 +9,15 @@ const JobDetailsPage = () => {
 
     useEffect(() => {
 
-        window.scrollTo(0, 0);
         getJobStoryDetails(id)
         .then(job => setJob(job))
-        .catch(error => console.error('Error fetching job details:', error));
+        .catch(error => console.error('Error fetching job details:', error))
     }, [id]);
 
     if (!job) {
-        return <div>Loading...</div>;
+        return <div>Loading...</div>
     }
-
+ 
     return (
         <div className="job-details-page">
             <div className="details-header">
