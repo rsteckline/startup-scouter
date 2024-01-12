@@ -1,9 +1,13 @@
 .App {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #F7EDE2;
   font-family: "Prompt", sans-serif;
-  font-weight: 500;
-  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }

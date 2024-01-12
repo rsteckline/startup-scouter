@@ -1,5 +1,15 @@
 .main-page {
-    max-width: 800px;
-    margin: 0 auto;
     padding: 20px;
 }
+
+.title {
+    color: #d38847;
+    margin-top: 10px;
+    font-size: 60px;
+    text-align: center;
+}
+
+.job-posting {
+    margin-left: 100px;
+    margin-bottom: 20px;
+  }

@@ -11,13 +11,20 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header onSearchChange={setSearchQuery} />
-        <main>
-          <Routes>
-            <Route path="/" element={<MainPage searchQuery={searchQuery} />} />
-            <Route path="/job/:id" element={<JobDetailsPage />} />
-          </Routes>
-        </main>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Header onSearchChange={setSearchQuery} />
+              <MainPage searchQuery={searchQuery} />
+            </>
+          } />
+          <Route path="/job/:id" element={
+            <>
+              <Header showBackButton={true} />
+              <JobDetailsPage />
+            </>
+          } />
+        </Routes>
       </div>
     </Router>
   );

@@ -23,8 +23,12 @@ const filteredStories = jobStories.filter(job => {
 
   return (
     <div className="main-page">
-      <h1>Job Listings</h1>
-      {filteredStories.map((job) => job && <JobPosting key={job.id} job={job} />)}
+      <h1 className="title">Job Listings</h1>
+      {filteredStories.map((job) => job && (
+        <div className="job-posting" key={job.id}>
+          <JobPosting job={job} />
+        </div>
+      ))}
     </div>
   );
 };
