@@ -4,6 +4,7 @@ import "./App.css";
 import MainPage from "./components/MainPage/MainPage";
 import Header from "./components/Header/Header";
 import JobDetailsPage from "./components/JobDetailsPage/JobDetailsPage";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -30,6 +31,7 @@ function App() {
               <JobDetailsPage key="details" />,
             ]}
           />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
     </Router>
