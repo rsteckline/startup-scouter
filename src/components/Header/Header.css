@@ -5,11 +5,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100px;
 }
 
 .app-header h1 {
-  margin: 20;
-  font-size: 1.5em;
+  margin: 0;
   font-size: 48px;
 }
   
