@@ -15,8 +15,12 @@ const MainPage = ({ searchQuery }) => {
 
   const filteredStories = jobStories.filter((job) => {
     const query = searchQuery.toLowerCase();
-    const titleMatches = job.title ? job.title.toLowerCase().includes(query) : false;
-    const textMatches = job.text ? job.text.toLowerCase().includes(query) : false;
+    const titleMatches = job.title
+      ? job.title.toLowerCase().includes(query)
+      : false;
+    const textMatches = job.text
+      ? job.text.toLowerCase().includes(query)
+      : false;
 
     return titleMatches || textMatches;
   });

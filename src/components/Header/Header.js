@@ -6,7 +6,11 @@ const Header = ({ onSearchChange, showBackButton = false }) => {
   return (
     <header className="app-header">
       <h1>Startup Scouter</h1>
-      {showBackButton ? (<Link to={"/"} className="back-button">Back</Link> ) : (
+      {showBackButton ? (
+        <Link to={"/"} className="back-button">
+          Back
+        </Link>
+      ) : (
         <div className="search-bar">
           <i className="fas fa-search search-icon" aria-hidden="true"></i>
           <input

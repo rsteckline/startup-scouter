@@ -1,32 +1,32 @@
 .app-header {
   background-color: #345B7B;
   color: white;
-  padding: 25px 50px;
+  padding: 2rem 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  height: 6rem;
 }
 
 .app-header h1 {
   margin: 0;
-  font-size: 48px;
+  font-size: 2.75rem;
 }
   
 .app-header input {
-  padding: 5px;
-  font-size: 1em;
+  padding: 0.3rem;
+  font-size: 1rem;
 }
 
 .back-button {
   display: inline-block;
-  margin: 20px;
-  padding: 10px 20px;
-  font-size: 1.2em;
+  margin: 1.25rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 1.25rem;
   background-color: #A2561C;
   color: white;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   transition: background-color 0.3s ease; 
 }
 
@@ -41,15 +41,15 @@
 
 .search-container .fa-search {
   color: white;
-  margin-right: 10px;
+  margin-right: .75rem;
 }
 
 .search-bar {
   display: flex;
   align-items: center;
   background-color: white;
-  border-radius: 5px;
-  padding: 5px;
+  border-radius: .3rem;
+  padding: .3rem;
   transition: box-shadow 0.1s;
 
   &:focus-within {
@@ -59,8 +59,8 @@
 
 .search-icon {
   color: #A2561C;
-  margin-right: 10px;
-  margin-left: 5px;
+  margin-right: .4rem;
+  margin-left: .3rem;
 }
 
 .search-input {
