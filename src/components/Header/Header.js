@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Header = ({ onSearchChange, showBackButton }) => {
   return (
@@ -30,11 +30,11 @@ const Header = ({ onSearchChange, showBackButton }) => {
 
 Header.propTypes = {
   onSearchChange: PropTypes.func.isRequired,
-  showBackButton: PropTypes.bool
+  showBackButton: PropTypes.bool,
 };
 
 Header.defaultProps = {
-  showBackButton: false
+  showBackButton: false,
 };
 
 export default Header;

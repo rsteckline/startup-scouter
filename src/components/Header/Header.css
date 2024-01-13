@@ -1,16 +1,16 @@
 .app-header {
   background-color: #345B7B;
   color: white;
-  padding: 2rem 3rem;
+  padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 6rem;
+  height: 4.5rem;
 }
 
 .app-header h1 {
   margin: 0;
-  font-size: 2.75rem;
+  font-size: 2.5rem;
 }
   
 .app-header input {

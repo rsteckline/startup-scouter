@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./JobPosting.css";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const JobPosting = ({ job }) => (
   <div className="job-posting-container">
@@ -35,7 +35,7 @@ JobPosting.propTypes = {
     text: PropTypes.string,
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     url: PropTypes.string,
-  }).isRequired
+  }).isRequired,
 };
 
 export default JobPosting;
