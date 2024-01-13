@@ -1,10 +1,10 @@
 .job-posting-container {
-  display: grid;
-  grid-template-columns: auto min-content;
-  align-items: center;
-  padding: 0rem .6rem .5rem .6rem;
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 1.25rem;
+    display: grid;
+    grid-template-columns: auto min-content;
+    align-items: center;
+    padding: 0rem .6rem .5rem .6rem;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1.25rem;
 }
 
 .job-link-icon {
@@ -14,13 +14,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 1.7rem;
-    height: 1.7rem; 
+    width: 2rem;
+    height: 2rem; 
     font-size: 1rem;
     text-decoration: none;
     margin-left: 0.5rem;
 }
-  
 
 .job-posting-container h1 {
     font-size: 1.2rem;
@@ -29,4 +28,4 @@
     text-overflow: ellipsis;
     line-height: 1.2;
     margin: 0;
-}
+} 
