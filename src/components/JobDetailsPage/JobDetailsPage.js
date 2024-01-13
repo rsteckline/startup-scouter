@@ -8,7 +8,7 @@ const JobDetailsPage = () => {
     const { id } = useParams();
 
     useEffect(() => {
-
+        window.scrollTo(0, 0);
         getJobStoryDetails(id)
         .then(job => setJob(job))
         .catch(error => console.error('Error fetching job details:', error))

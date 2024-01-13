@@ -1,5 +1,5 @@
 .app-header {
-  background-color: #457B9D;
+  background-color: #345B7B;
   color: white;
   padding: 25px 50px;
   display: flex;
@@ -20,13 +20,18 @@
 
 .back-button {
   display: inline-block;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  margin-right: 20px;
-  background-color: #d38847;
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: #A2561C;
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease; 
+}
+
+.back-button:hover {
+  background-color: #b36b30;
 }
 
 .search-container {
@@ -48,12 +53,12 @@
   transition: box-shadow 0.1s;
 
   &:focus-within {
-    box-shadow: 0 0 20px #d38847;
+    box-shadow: 0 0 20px #A2561C;
   }
 }
 
 .search-icon {
-  color: #d38847;
+  color: #A2561C;
   margin-right: 10px;
   margin-left: 5px;
 }

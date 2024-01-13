@@ -7,19 +7,20 @@ const JobPosting = ({ job }) => {
 
   return (
     <div className="job-posting-container">
-      <h3>
+      <h1>
         {hasText ? (
           <Link to={`/job/${job.id}`}>{job.title}</Link>
         ) : (
           <span>{job.title}</span>
         )}
-      </h3>
+      </h1>
       {job.url && (
         <a
           href={job.url}
           target="_blank"
           rel="noopener noreferrer"
           className="job-link-icon"
+          aria-label={`Read more about ${job.title}`}
         >
           <i className="fa-solid fa-link"></i>
         </a>

@@ -8,12 +8,13 @@ const Header = ({ onSearchChange, showBackButton = false }) => {
       <h1>Startup Scouter</h1>
       {showBackButton ? (<Link to={"/"} className="back-button">Back</Link> ) : (
         <div className="search-bar">
-          <i className="fas fa-search search-icon"></i>
+          <i className="fas fa-search search-icon" aria-hidden="true"></i>
           <input
             type="text"
             placeholder="Search postings"
             onChange={(e) => onSearchChange(e.target.value)}
             className="search-input"
+            aria-label="Search postings"
           />
         </div>
       )}
