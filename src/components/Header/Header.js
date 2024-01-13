@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import PropTypes from 'prop-types';
 
-const Header = ({ onSearchChange, showBackButton = false }) => {
+const Header = ({ onSearchChange, showBackButton }) => {
   return (
     <header className="app-header">
       <h1>Startup Scouter</h1>
@@ -19,11 +20,21 @@ const Header = ({ onSearchChange, showBackButton = false }) => {
             onChange={(e) => onSearchChange(e.target.value)}
             className="search-input"
             aria-label="Search postings"
+            name="searchQuery"
           />
         </div>
       )}
     </header>
   );
+};
+
+Header.propTypes = {
+  onSearchChange: PropTypes.func.isRequired,
+  showBackButton: PropTypes.bool
+};
+
+Header.defaultProps = {
+  showBackButton: false
 };
 
 export default Header;
