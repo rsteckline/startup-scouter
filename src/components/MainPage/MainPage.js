@@ -5,12 +5,24 @@ import "./MainPage.css";
 
 const MainPage = ({ searchQuery }) => {
   const [jobStories, setJobStories] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
+    setIsLoading(true);
     getJobStoryIds()
-      .then((ids) => Promise.all(ids.map((id) => getJobStoryDetails(id))))
-      .then((jobs) => setJobStories(jobs))
-      .catch((error) => console.error("Error fetching jobs:", error));
+      .then((ids) => {
+        const jobDetailsPromises = ids.map((id) => getJobStoryDetails(id));
+        return Promise.all(jobDetailsPromises);
+      })
+      .then((jobs) => {
+        setJobStories(jobs);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setIsLoading(false);
+      });
   }, []);
 
   const filteredStories = jobStories.filter((job) => {
@@ -21,20 +33,24 @@ const MainPage = ({ searchQuery }) => {
     const textMatches = job.text
       ? job.text.toLowerCase().includes(query)
       : false;
-
     return titleMatches || textMatches;
   });
+
+  if (isLoading) {
+    return <div className="loading">Loading...</div>;
+  }
+
+  if (error) {
+    return <div className="error">Error: {error}</div>;
+  }
 
   return (
     <div className="main-page">
       <h1 className="title">Job Listings</h1>
-      {filteredStories.map(
-        (job) =>
-          job && (
-            <div className="job-posting" key={job.id}>
-              <JobPosting job={job} />
-            </div>
-          )
+      {filteredStories.length > 0 ? (
+        filteredStories.map((job) => <JobPosting key={job.id} job={job} />)
+      ) : (
+        <div>No job listings found.</div>
       )}
     </div>
   );
