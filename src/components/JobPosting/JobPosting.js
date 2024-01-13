@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./JobPosting.css";
+import PropTypes from "prop-types";
 
 const JobPosting = ({ job }) => (
   <div className="job-posting-container">
@@ -11,7 +12,7 @@ const JobPosting = ({ job }) => (
         className="job-link-icon"
         aria-label="View job details"
       >
-        <i class="fa-solid fa-circle-info"></i>
+        <i className="fa-solid fa-circle-info"></i>
       </Link>
     )}
     {job.url && (
@@ -27,5 +28,14 @@ const JobPosting = ({ job }) => (
     )}
   </div>
 );
+
+JobPosting.propTypes = {
+  job: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    text: PropTypes.string,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    url: PropTypes.string,
+  }).isRequired,
+};
 
 export default JobPosting;

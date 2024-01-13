@@ -8,6 +8,10 @@ import JobDetailsPage from "./components/JobDetailsPage/JobDetailsPage";
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
 
+  const handleSearchChange = (newSearchQuery) => {
+    setSearchQuery(newSearchQuery);
+  };
+
   return (
     <Router>
       <div className="App">
@@ -15,14 +19,14 @@ function App() {
           <Route
             path="/"
             element={[
-              <Header key="header" onSearchChange={setSearchQuery} />,
+              <Header key="header" onSearchChange={handleSearchChange} />,
               <MainPage key="main" searchQuery={searchQuery} />,
             ]}
           />
           <Route
             path="/job/:id"
             element={[
-              <Header key="header" showBackButton={true} />,
+              <Header key="header" onSearchChange={() => {}} showBackButton={true} />,
               <JobDetailsPage key="details" />,
             ]}
           />

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getJobStoryIds, getJobStoryDetails } from "../../apiCalls";
 import JobPosting from "../JobPosting/JobPosting";
 import "./MainPage.css";
+import PropTypes from "prop-types";
 
 const MainPage = ({ searchQuery }) => {
   const [jobStories, setJobStories] = useState([]);
@@ -54,6 +55,10 @@ const MainPage = ({ searchQuery }) => {
       )}
     </div>
   );
+};
+
+MainPage.propTypes = {
+  searchQuery: PropTypes.string.isRequired,
 };
 
 export default MainPage;
