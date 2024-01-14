@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getJobStoryIds, getJobStoryDetails } from "../../apiCalls";
 import JobPosting from "../JobPosting/JobPosting";
+import ErrorPage from "../ErrorPage/ErrorPage";
 import "./MainPage.css";
 import PropTypes from "prop-types";
 
@@ -21,19 +22,17 @@ const MainPage = ({ searchQuery }) => {
         setIsLoading(false);
       })
       .catch((error) => {
-        setError(error.message);
+        console.error("Fetch error:", error);
+        setError(error);
         setIsLoading(false);
       });
   }, []);
+  
 
   const filteredStories = jobStories.filter((job) => {
     const query = searchQuery.toLowerCase();
-    const titleMatches = job.title
-      ? job.title.toLowerCase().includes(query)
-      : false;
-    const textMatches = job.text
-      ? job.text.toLowerCase().includes(query)
-      : false;
+    const titleMatches = job.title ? job.title.toLowerCase().includes(query) : false;
+    const textMatches = job.text ? job.text.toLowerCase().includes(query) : false;
     return titleMatches || textMatches;
   });
 
@@ -42,7 +41,7 @@ const MainPage = ({ searchQuery }) => {
   }
 
   if (error) {
-    return <div className="error">Error: {error}</div>;
+    return <ErrorPage error={error} />; 
   }
 
   return (

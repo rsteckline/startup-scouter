@@ -3,11 +3,11 @@ export const getJobStoryIds = () => {
     (response) => {
       if (!response.ok) {
         if (response.status >= 400 && response.status < 500) {
-          throw new Error("Error: There was a problem with the request.");
+          throw new Error("There was a problem with the request.");
         } else if (response.status >= 500) {
-          throw new Error("Error: Please try again later.");
+          throw new Error("Please try again later.");
         } else {
-          throw new Error("Error: Unable to fulfill request.");
+          throw new Error("Unable to fulfill request.");
         }
       }
       return response.json();
@@ -16,18 +16,21 @@ export const getJobStoryIds = () => {
 };
 
 export const getJobStoryDetails = (id) => {
-  return fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then(
-    (response) => {
+  return fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
+    .then(response => {
       if (!response.ok) {
         if (response.status >= 400 && response.status < 500) {
-          throw new Error("Error: There was a problem with the request.");
+          throw new Error("There was a problem with the request.");
         } else if (response.status >= 500) {
-          throw new Error("Error: Please try again later.");
+          throw new Error("Please try again later.");
         } else {
-          throw new Error("Error: Unable to fulfill request.");
+          throw new Error("Unable to fulfill request.");
         }
       }
       return response.json();
-    }
-  );
+    })
+    .catch(error => {
+      console.error("Network error:", error);
+      throw new Error("Network error occurred");
+    });
 };

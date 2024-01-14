@@ -49,8 +49,8 @@
   align-items: center;
   background-color: white;
   border-radius: .3rem;
-  padding: .3rem;
-  transition: box-shadow 0.1s;
+  padding: .1rem;
+  transition: box-shadow .2s;
 
   &:focus-within {
     box-shadow: 0 0 20px #A2561C;

@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./ErrorPage.css"
+import "./ErrorPage.css";
 
-const ErrorPage = () => {
+const ErrorPage = ({ error }) => {
+  const errorMessage =
+    error?.message || "Sorry, the page you are looking for does not exist.";
   return (
-    <div className="error-message">
-      <h1>Sorry, the page you are looking for does not exist.</h1>
+    <div className="error-page">
+      <div className="error-message">{errorMessage}</div>
       <Link to="/">Go Home</Link>
     </div>
   );
