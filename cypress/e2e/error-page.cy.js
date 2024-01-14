@@ -1,5 +1,3 @@
-// error-page.cy.js
-
 describe("Error handling", () => {
   it("should show an appropriate error if a server error occurs on job stories fetch", () => {
     cy.intercept(

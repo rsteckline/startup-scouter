@@ -9,13 +9,13 @@ describe("Main Page Tests", () => {
     cy.intercept(
       "GET",
       "https://hacker-news.firebaseio.com/v0/item/38984514.json",
-      { statusCode: 200, fixture: "mock-job-details-38984514.json" }
+      { statusCode: 200, fixture: "mock-job-details-1.json" }
     ).as("getFirstJobDetails");
 
     cy.intercept(
       "GET",
       "https://hacker-news.firebaseio.com/v0/item/38981851.json",
-      { statusCode: 200, fixture: "mock-job-details-38981851.json" }
+      { statusCode: 200, fixture: "mock-job-details-2.json" }
     ).as("getLastJobDetails");
 
     cy.visit("/");
