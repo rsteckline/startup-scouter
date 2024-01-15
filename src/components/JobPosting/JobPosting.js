@@ -17,7 +17,7 @@ const JobPosting = ({ job }) => {
         <Link
           to={`/job/${job.id}`}
           className="job-link-icon"
-          aria-label="View job details"
+          aria-label="Job info"
         >
           info
         </Link>
@@ -28,7 +28,7 @@ const JobPosting = ({ job }) => {
           target="_blank"
           rel="noopener noreferrer"
           className="job-link-icon"
-          aria-label={`Read more about ${job.title}`}
+          aria-label="Job info"
         >
           🔗
         </a>
