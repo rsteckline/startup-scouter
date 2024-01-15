@@ -31,7 +31,7 @@ function App() {
               <JobDetailsPage key="details" />,
             ]}
           />
-          <Route path="*" element={<ErrorPage />} />
+          <Route path="*" element={<ErrorPage error={{ message: "Sorry, the page you are looking for does not exist." }} />} />
         </Routes>
       </div>
     </Router>

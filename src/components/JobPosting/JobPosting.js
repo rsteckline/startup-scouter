@@ -12,7 +12,7 @@ const JobPosting = ({ job }) => (
         className="job-link-icon"
         aria-label="View job details"
       >
-        <i className="fa-solid fa-circle-info"></i>
+        info
       </Link>
     )}
     {job.url && (
@@ -23,7 +23,7 @@ const JobPosting = ({ job }) => (
         className="job-link-icon"
         aria-label={`Read more about ${job.title}`}
       >
-        <i className="fa-solid fa-link"></i>
+        🔗
       </a>
     )}
   </div>

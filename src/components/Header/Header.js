@@ -13,7 +13,7 @@ const Header = ({ onSearchChange, showBackButton }) => {
         </Link>
       ) : (
         <div className="search-bar">
-          <i className="fas fa-search search-icon" aria-hidden="true"></i>
+          <span className="search-icon">🔍</span>
           <input
             type="text"
             placeholder="Search postings"
