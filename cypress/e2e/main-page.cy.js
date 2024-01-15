@@ -4,7 +4,7 @@ describe("Main Page Tests", () => {
       "GET",
       "https://hacker-news.firebaseio.com/v0/jobstories.json",
       { statusCode: 200, fixture: "mock-job-ids.json" }
-    ).as("getJobIds");
+    ).as("xod");
 
     cy.intercept(
       "GET",

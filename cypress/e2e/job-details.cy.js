@@ -24,6 +24,6 @@ describe("Job Details Page Tests", () => {
 
   it("has a working 'Back' button in the header", () => {
     cy.get(".back-button").click();
-    cy.url().should("eq", Cypress.config().baseUrl + "/");
+    cy.location("pathname").should("eq", "/");
   });
 });
