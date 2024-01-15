@@ -3,31 +3,39 @@ import { Link } from "react-router-dom";
 import "./JobPosting.css";
 import PropTypes from "prop-types";
 
-const JobPosting = ({ job }) => (
-  <div className="job-posting-container">
-    <h1>{job.title}</h1>
-    {job.text && (
-      <Link
-        to={`/job/${job.id}`}
-        className="job-link-icon"
-        aria-label="View job details"
-      >
-        info
-      </Link>
-    )}
-    {job.url && (
-      <a
-        href={job.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="job-link-icon"
-        aria-label={`Read more about ${job.title}`}
-      >
-        🔗
-      </a>
-    )}
-  </div>
-);
+const JobPosting = ({ job }) => {
+  const batchNumberRegex = /\(?\s*YC \w{1,2}\d{2}\s*\)?/;
+
+  const cleanTitle = (title) => {
+    return title.replace(batchNumberRegex, '').trim();
+  };
+
+  return (
+    <div className="job-posting-container">
+      <h1>{cleanTitle(job.title)}</h1>
+      {job.text && (
+        <Link
+          to={`/job/${job.id}`}
+          className="job-link-icon"
+          aria-label="View job details"
+        >
+          info
+        </Link>
+      )}
+      {job.url && (
+        <a
+          href={job.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="job-link-icon"
+          aria-label={`Read more about ${job.title}`}
+        >
+          🔗
+        </a>
+      )}
+    </div>
+  );
+};
 
 JobPosting.propTypes = {
   job: PropTypes.shape({
