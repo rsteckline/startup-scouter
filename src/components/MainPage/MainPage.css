@@ -1,5 +1,10 @@
 .main-page {
   padding: 1rem;
+  padding-top: 4rem;
+
+  @media (max-width: 640px) {
+    padding-top: 0.5rem;
+  }
 
   @media (max-width: 490px) {
     padding: 0.5rem;
