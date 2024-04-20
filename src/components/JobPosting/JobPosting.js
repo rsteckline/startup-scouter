@@ -4,10 +4,11 @@ import "./JobPosting.css";
 import PropTypes from "prop-types";
 
 const JobPosting = ({ job }) => {
-  const batchNumberRegex = /\(?\s*YC \w{1,2}\d{2}\s*\)?/;
+  const batchNumberRegex =
+    /\(YC\s+\w{1,2}\d{2}[^)]*?\)\s*,?|YC\s+\w{1,2}\d{2}\s*,?\s*/i;
 
   const cleanTitle = (title) => {
-    return title.replace(batchNumberRegex, '').trim();
+    return title.replace(batchNumberRegex, "").trim();
   };
 
   return (
